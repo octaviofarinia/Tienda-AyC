@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="img" href="media/img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main_style.css">
+    <title>Agendas y Cuadernos Personalizados</title>
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="mainNavbar">
+            <ul>
+                <li class="liLogo">
+                    <img src="../media/img/logo.png" alt="logo agendas y cuadernos personalizados" class="logoNavbar">
+                </li>
+                <li>
+                    <a href="../index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="agendas.html">Agendas</a>
+                </li>
+                <li>
+                    <a href="cuadernos.html">Cuadernos</a>
+                </li>
+                <li>
+                    <a href="especiales.html">Especiales</a>
+                </li>
+                <li>
+                    <a href="nosotros.html">Nosotros</a>
+                </li>
+                <li>
+                    <a href="contacto.html">¡Hace tu Pedido!</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Formulario de contacto -->
+    <section>
+        <h3>¡Gracias por elegirnos! </h3>
+        <h3>Podes hacer tus pedidos a: </h3>
+        <img src="../media/img/icons/whatsapp.png" alt="" width="25px">
+        <p>2615349579</p>
+        <img src="../media/img/icons/envelope.png" alt="" width="25px">
+        <p>agendasYCuadernosPersonalizados@gmail.com</p>
+        <hr>
+        
+        <h1>Tambien podes completar el formulario con tus datos y responderemos tus dudas:</h1>
+        <form action="#">
+            <div>
+                <label for="nombre">Ingrese su nombre:
+                    <input type="text" name="nombre" placeholder="Octavio Fariña">
+                </label>
+            </div>
+            <div>
+                <label for="email">Ingrese su mail:
+                    <input type="email" placeholder="ejemplo@gmail.com" name="email"><br>
+                </label>
+            </div>
+            <div>
+                <label for="consulta">Consulta: <br>
+                    <textarea placeholder="escribe aquí tu consulta"></textarea>
+                </label>
+            </div>
+            <div>
+                <p>Tipo de consulta:</p>
+                <select name="tipo_consulta">
+                    <option value="cancelacion_pedido">Cancelar Pedido</option>
+                    <option value="critica">Crítica</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                ¿Queres recibir info sobre nosotros?
+                <input type="checkbox" name="acepta_newsletter" value="1">
+            </div>
+            <div>
+                <input type="submit" value="ENVIAR">
+                <input type="reset" value="RESETEAR">
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <ul>
+            <li>
+                <img src="../media/img/logo.png" alt="" class="logoFooter">
+            </li>
+            <li>
+                <p><a href="contacto.html">Contactanos</a></p>
+            </li>
+        </ul>
+    </footer>
+</body>
+
+</html>
