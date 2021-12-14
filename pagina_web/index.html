@@ -9,98 +9,109 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main_style.css">
+    <link rel="stylesheet" href="css/common_style.css">
+    <link rel="stylesheet" href="css/index_style.css">
     <title>Agendas y Cuadernos Personalizados</title>
 </head>
 
 <body>
     <header>
-        <!-- Navbar -->
-        <nav class="mainNavbar">
-            <ul>
-                <li class="liLogo">
-                    <img src="media/img/logo.png" alt="logo agendas y cuadernos personalizados" class="logoNavbar">
-                </li>
-                <li>
-                    <a href="index.html">Inicio</a>
-                </li>
-                <li>
-                    <a href="pages/agendas.html">Agendas</a>
-                </li>
-                <li>
-                    <a href="pages/cuadernos.html">Cuadernos</a>
-                </li>
-                <li>
-                    <a href="pages/especiales.html">Especiales</a>
-                </li>
-                <li>
-                    <a href="pages/nosotros.html">Nosotros</a>
-                </li>
-                <li>
-                    <a href="pages/contacto.html">¡Hace tu Pedido!</a>
-                </li>
+
+        <!-- NAVBAR RESPONSIVE -->
+        <nav class="navbar">
+            <div>
+                <img src="media/img/logo.png" alt="logo agendas y cuadernos personalizados" class="logoNavbar">
+            </div>
+
+            <ul class="nav-links">
+
+                <!-- checkbox (hamburger icon) que hace que el menu se despliege en mobile -->
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+                <div class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="pages/agendas.html">Agendas</a></li>
+                    <li><a href="pages/cuadernos.html">Cuadernos</a></li>
+                    <li><a href="pages/especiales.html">Especiales</a></li>
+                    <li><a href="pages/nosotros.html">Nosotros</a></li>
+                    <li><a href="pages/contacto.html">¡Hace tu Pedido!</a></li>
+                </div>
             </ul>
         </nav>
+
     </header>
 
-    <!-- Section Carousel -->
-    <section>
-        <div class="carousel">
+    <!-- Main Content -->
+    <main>
+        <!-- Section Carousel -->
+        <!-- TODO: Aprender a hacer un carousel xd -->
+        <section class="carousel">
             <img src="media/img/home/carousel/a.jpg" alt="">
             <!-- <img src="img/carousel/b.jpg" alt=""> -->
             <!-- <img src="img/carousel/c.jpg" alt=""> -->
-        </div>
-    </section>
+        </section>
 
-    <!-- Section descripcion general productos -->
-    <section class="descripcionGeneral">
-        <h3> Agendas y Cuadernos Personalizados</h3>
-        <p>
-            Aca va una descripcion general de los productos que se venderan en el sitio web... Lorem ipsum dolor sit amet consectetur, adipisicing elit. In quos eius consequuntur nemo repellat quasi iste iure ipsam neque, ratione ipsum libero culpa sit nulla quae
-            perspiciatis odit cum adipisci? Blanditiis molestias atque aspernatur ducimus debitis odit sit nemo, eligendi fugit eius optio ad non iure eaque consequatur rerum. Tenetur voluptates ea inventore! Alias voluptatum dolorum atque sunt dignissimos
-            asperiores! Maiores deserunt sunt saepe totam assumenda. Tenetur repudiandae sequi a iusto odio quas impedit ullam inventore sit vitae labore nemo corporis minima optio, architecto veniam odit laudantium quod excepturi. Fuga. Voluptates enim
-            dicta molestias beatae fuga nemo sunt vero eius quos sed voluptas aperiam nesciunt velit et quibusdam quod, atque dolor totam accusamus explicabo libero amet inventore rerum? Ullam, impedit. Nulla iure beatae, optio recusandae hic harum omnis
-            alias eius incidunt minus amet aliquam quia perspiciatis in sint non, quo quaerat illum magni modi maiores expedita.
-        </p>
-    </section>
+        <!-- Section descripcion general productos -->
+        <section class="descripcionGeneral">
+            <h1> Agendas y Cuadernos Personalizados</h1>
+            <p>
+                Aca va una descripcion general de los productos que se venderan en el sitio web... Lorem ipsum dolor sit
+                amet consectetur, adipisicing elit. In quos eius consequuntur nemo repellat quasi iste iure ipsam neque,
+                ratione ipsum libero culpa sit nulla quae
+                perspiciatis odit cum adipisci? Blanditiis molestias atque aspernatur ducimus debitis odit sit nemo,
+                eligendi fugit eius optio ad non iure eaque consequatur rerum. Tenetur voluptates ea inventore! Alias
+                voluptatum dolorum atque sunt dignissimos
+                asperiores! Maiores deserunt sunt saepe totam assumenda. Tenetur repudiandae sequi a iusto odio quas
+                impedit ullam inventore sit vitae labore nemo corporis minima optio, architecto veniam odit laudantium
+                quod excepturi. Fuga. Voluptates enim
+                dicta molestias beatae fuga nemo sunt vero eius quos sed voluptas aperiam nesciunt velit et quibusdam
+                quod, atque dolor totam accusamus explicabo libero amet inventore rerum? Ullam, impedit. Nulla iure
+                beatae, optio recusandae hic harum omnis
+                alias eius incidunt minus amet aliquam quia perspiciatis in sint non, quo quaerat illum magni modi
+                maiores expedita.
+            </p>
+        </section>
 
-    <!-- Section Cards Categorias -->
-    <section class="cardSection">
-        <hr>
-        <!-- Card Agendas -->
-        <div class="card">
-            <div class="cardImg">
-                <img src="media/img/home/index_cards/1_a.jpg" alt="">
+        <!-- TODO: Poner animaciones con scroll en las categorias -->
+        <!-- Section Categorias -->
+        <section class="catSection">
+            <!-- Categoria Agendas -->
+            <div class="catAgendas">
+                <div class="catImg">
+                    <img src="media/img/home/index_cards/1_a.jpg" alt="">
+                </div>
+                <div class="catBody">
+                    <p class="catTitle"><a href="pages/agendas.html">Planificá con nuestras agendas personalizadas.</a>
+                    </p>
+                    <p class="catDescription">Elegí el modelo que más se adapte a tu estilo.</p>
+                </div>
             </div>
-            <div class="cardBody">
-                <h5><a href="pages/agendas.html">Agendas</a></h5>
-                <p>Breve descripcion. Lorem ipsum dolor sit amet consectetur, adipisicing elit. In quos eius consequuntur nemo repellat quasi iste iure ipsam neque,</p>
+            <hr class="separadorCategorias">
+            <!-- Categoria Cuadernos -->
+            <div class="catCuadernos">
+                <div class="catImg">
+                    <img src="media/img/home/index_cards/2_a.jpg" alt="">
+                </div>
+                <div class="catBody">
+                    <p class="catTitle"><a href="pages/cuadernos.html">Creá, expresate, imaginá con nuestros
+                            cuadernos.</a></p>
+                    <p class="catDescription">Tenés un diseño de interior para cada interés, elegí el tuyo.</p>
+                </div>
             </div>
-        </div>
-
-        <!-- Card Cuadernos -->
-        <div class="card">
-            <div class="cardImg">
-                <img src="media/img/home/index_cards/2_a.jpg" alt="">
+            <hr class="separadorCategorias">
+            <!-- Categoria Especiales -->
+            <div class="catEspeciales">
+                <div class="catImg">
+                    <img src="media/img/home/index_cards/3_a.jpg" alt="">
+                </div>
+                <div class="catBody">
+                    <p class="catTitle"><a href="pages/especiales.html">Especiales. De todo un poco.</a></p>
+                    <p class="catDescription">Miralos y sorprendete. Descubrilos y hacelos tuyos.</p>
+                </div>
             </div>
-            <div class="cardBody">
-                <h5><a href="pages/cuadernos.html">Cuadernos</a></h5>
-                <p>Breve descripcion. Lorem ipsum dolor sit amet consectetur, adipisicing elit. In quos eius consequuntur nemo repellat quasi iste iure ipsam neque,</p>
-            </div>
-        </div>
-
-        <!-- Card Especiales -->
-        <div class="card">
-            <div class="cardImg">
-                <img src="media/img/home/index_cards/3_a.jpg" alt="">
-            </div>
-            <div class="cardBody">
-                <h5><a href="pages/especiales.html">Especiales</a></h5>
-                <p>Breve descripcion. Lorem ipsum dolor sit amet consectetur, adipisicing elit. In quos eius consequuntur nemo repellat quasi iste iure ipsam neque,</p>
-            </div>
-        </div>
-        <hr>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>

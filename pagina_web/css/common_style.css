@@ -1,0 +1,131 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+main {
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* GRID */
+body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px auto 50px;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"
+    ;
+}
+header {
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+footer {
+    grid-area: footer;
+}
+/* FIN GRID */
+
+/* NAVBAR */
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #8ECAE6;
+    color: #fff;
+}
+.nav-links a {
+    color: #fff;
+}
+
+.logoNavbar {
+    width: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.menu {
+    display: flex;
+    font-size: 18px;
+}
+.menu li:hover {
+    background-color: #219ebc;
+    transition: 0.3s ease;
+}
+.menu li {
+    padding: 15px 14px;
+}
+
+input[type=checkbox]{
+    display: none;
+} 
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between;
+    }
+    .menu { 
+        display:none;
+        position: absolute;
+        background-color:#8ECAE6;
+        right: 0;
+        left: 0;
+        text-align: center;
+    }
+    .menu li:hover {
+        display: inline-block;
+        background-color:#219ebc;
+        transition: 0.3s ease;
+    }
+    .menu li + li { /* selecciona todos los li que tienen al lado otro li */
+        margin-top: 12px;
+    }
+    input[type=checkbox]:checked ~ .menu{
+        display: block;
+    }
+    .hamburger {
+        display: block;
+        margin-right: 10px;
+    }
+}
+/* FIN NAVBAR */
+
+/* Footer */
+footer {
+    margin-top: 15px;
+    width: 100%;
+    height: 40px;
+    background-color: #8ECAE6;
+}
+footer ul li {
+    display: inline-block;
+}
+.logoFooter {
+    width: 25px;
+    padding: 10px 0px 0px 10px;
+}
+footer p a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+/* FIN Footer */
