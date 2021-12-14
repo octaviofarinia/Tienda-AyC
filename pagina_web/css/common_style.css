@@ -119,12 +119,12 @@ footer ul li {
     display: inline-block;
 }
 .logoFooter {
-    width: 25px;
+    width: 30px;
     padding: 10px 0px 0px 10px;
 }
 footer p a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
     font-size: 20px;
 }
