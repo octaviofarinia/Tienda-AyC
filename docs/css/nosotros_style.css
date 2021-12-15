@@ -1,0 +1,31 @@
+/* Grid */
+.descripcionSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#containerUno {
+    grid-area: containerUno;
+}
+#containerDos {
+    grid-area: containerDos;
+}
+/* FIN Grid */
+
+#containerUno {
+    display: flex;
+    flex-direction: row;
+}
+
+#containerDos {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.descripcionSectionBody {
+    display: block;
+}
+
+img.descripcionSectionImg {
+    height: 250px;
+}
