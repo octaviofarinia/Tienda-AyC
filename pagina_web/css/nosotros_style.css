@@ -1,0 +1,16 @@
+
+.descripcionSection {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+        "containerUno"
+        "containerDos"
+    ;
+}
+#containerUno {
+    grid-area: containerUno;
+}
+#containerDos {
+    grid-area: containerDos;
+}
