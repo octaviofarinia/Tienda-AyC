@@ -28,4 +28,23 @@
 
 img.descripcionSectionImg {
     height: 250px;
+    width: 250px;
+    margin: auto 20px;
 }
+
+/* MEDIA 600px */
+@media (max-width: 600px) {
+    #containerUno, #containerDos {
+        flex-direction: column;
+    }
+    img.descripcionSectionImg {
+        margin: 20px auto;
+    }
+    .titulo {
+        text-align: center;
+    }
+    .descripcionSectionBody p {
+        text-align: justify;
+    }
+}
+/* FIN MEDIA 600px */
