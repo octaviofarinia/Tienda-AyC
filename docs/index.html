@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/common_style.css">
     <link rel="stylesheet" href="css/index_style.css">
     <title>Agendas y Cuadernos Personalizados</title>
@@ -69,16 +70,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="media/img/home/carousel/a.jpg" class="d-block w-100"
-                        style="height: 400px; object-fit: cover;" alt="...">
+                    <img src="media/img/home/carousel/a.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="media/img/home/carousel/b.jpg" class="d-block w-100"
-                        style="height: 400px; object-fit: cover;" alt="...">
+                    <img src="media/img/home/carousel/b.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="media/img/home/carousel/c.jpg" class="d-block w-100"
-                        style="height: 400px; object-fit: cover;" alt="...">
+                    <img src="media/img/home/carousel/c.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndex" data-bs-slide="prev">
@@ -116,7 +114,7 @@
         <!-- Section Categorias -->
         <section class="catSection">
             <!-- Categoria Agendas -->
-            <div class="catAgendas">
+            <div class="catAgendas wow animate__animated animate__fadeInLeft">
                 <div class="catImg">
                     <img src="media/img/home/index_cards/1_a.jpg" alt="">
                 </div>
@@ -128,7 +126,7 @@
             </div>
             <hr class="separadorCategorias">
             <!-- Categoria Cuadernos -->
-            <div class="catCuadernos">
+            <div class="catCuadernos wow animate__animated animate__fadeInRight">
                 <div class="catImg">
                     <img src="media/img/home/index_cards/2_a.jpg" alt="">
                 </div>
@@ -140,7 +138,7 @@
             </div>
             <hr class="separadorCategorias">
             <!-- Categoria Especiales -->
-            <div class="catEspeciales">
+            <div class="catEspeciales wow animate__animated animate__fadeInLeft">
                 <div class="catImg">
                     <img src="media/img/home/index_cards/3_a.jpg" alt="">
                 </div>
@@ -165,6 +163,12 @@
             </section>
         </div>
     </footer>
+
+    <!-- WOW js -->
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 
     <!-- Scripts Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"

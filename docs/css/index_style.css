@@ -20,6 +20,13 @@ section.catSection {
 }
 /* FIN GRID */
 
+/* Carousel */
+#carouselIndex .carousel-inner .carousel-item img {
+    height: 600px; 
+    object-fit: cover;
+}
+/* FIN Carousel */
+
 /* Descripcion General */
 .descripcionGeneral {
     background-color: white;
