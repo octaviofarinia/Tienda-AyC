@@ -11,7 +11,7 @@ body {
 main {
     width: 90%;
     margin: 20px auto;
-    height: calc(100vh - 180px);
+    min-height: calc(100vh - 180px);
 }
 
 hr.separador {
