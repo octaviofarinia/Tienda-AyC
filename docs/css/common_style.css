@@ -7,6 +7,7 @@
 body {
     font-family: 'Raleway', sans-serif;
 }
+
 main {
     width: 90%;
     margin: 20px auto;
@@ -52,6 +53,7 @@ nav {
 .nav-link:hover {
     font-weight: bold;
     color: black;
+    transform: scale(1.1, 1.1);
 }
 /* FIN NAVBAR */
 
