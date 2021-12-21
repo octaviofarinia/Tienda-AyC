@@ -7,6 +7,7 @@
 body {
     font-family: 'Raleway', sans-serif;
 }
+
 main {
     width: 90%;
     margin: 20px auto;
@@ -39,8 +40,11 @@ footer {
 /* FIN GRID */
 
 /* NAVBAR */
+/* background-color: #8ECAE6; */
 nav {
-    background-color: #8ECAE6;
+    background: #ee0979;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .navbar-light .navbar-nav .nav-link.active {
     font-weight: bold;
@@ -52,12 +56,16 @@ nav {
 .nav-link:hover {
     font-weight: bold;
     color: black;
+    transform: scale(1.1, 1.1);
 }
 /* FIN NAVBAR */
 
-/* Footer*/
+/* Footer */
+/* background-color: #8ECAE6; */
 footer {
-    background-color: #8ECAE6;
+    background: #41295a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .logoFooter {
     width: 30px;
