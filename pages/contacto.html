@@ -81,37 +81,39 @@
         <hr>
 
         <!-- Formulario de contacto -->
-        <section class="sectionFormContacto">
+        <section>
             <h3 class="encabezadoFormularioContacto">Completá el formulario con tus datos y responderemos tus dudas:</h3>
-            <form action="#" class="formularioContacto">
-                <div class="nombreYMail">
-                    <label for="nombre">Ingrese su nombre:
+            <form action="#" class="row">
+                <div class="col-6">
+                    <div class="bloqueNombre">
+                        <label for="nombre">Ingrese su nombre:</label>
                         <input id="nombre" type="text" name="nombre" placeholder="Octavio Fariña">
-                    </label>
-                    <label for="email">Ingrese su mail:
+                    </div>
+                    <div class="bloqueEmail">
+                        <label for="email">Ingrese su mail:</label>
                         <input id="email" type="email" placeholder="ejemplo@gmail.com" name="email"><br>
-                    </label>
+                    </div>
                 </div>
-                <div class="consulta">
-                    <label for="consulta">Consulta: <br>
+                <div class="col-6">
+                    <div class="bloqueConsulta">
+                        <label for="consulta">Consulta:</label>
                         <textarea id="consulta" placeholder="escribe aquí tu consulta"></textarea>
-                    </label>
+                    </div>
                 </div>
-                <div class="tipoConsulta">
-                    <p>Tipo de consulta:</p>
+                <div class="">
+                    <label for="tipo_consulta">Tipo de consulta:</label>
                     <select name="tipo_consulta">
                         <option value="cancelacion_pedido">Cancelar Pedido</option>
                         <option value="critica">Crítica</option>
                         <option value="otro">Otro</option>
                     </select>
                 </div>
-                <div class="suscribite al newsletter">
-                    <label for="acepta_newsletter">
-                        <input id="acepta_newsletter" type="checkbox" name="acepta_newsletter" value="1">
-                    </label>
+                <div class="">
+                    <label for="acepta_newsletter">Acceder al Newsletter</label>
+                    <input id="acepta_newsletter" type="checkbox" name="acepta_newsletter" value="1">
                 </div>
-                <div>
-                    <input type="submit" value="ENVIAR">
+                <div class="botonEnviar">
+                    <input class="btn btn-dark" type="submit" value="ENVIAR">
                 </div>
             </form>
         </section>

@@ -40,5 +40,12 @@ form.formularioContacto {
     align-items: center;
     justify-content: center;
 }
+.bloqueNombre, .bloqueEmail, .bloqueConsulta {
+    display: flex;
+    flex-direction: column;
+}
 
+.botonEnviar {
+    margin-top: 20px;
+}
 /* FIN Formulario de contacto */
