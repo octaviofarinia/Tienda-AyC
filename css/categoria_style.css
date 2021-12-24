@@ -30,7 +30,7 @@ section.descripcionYTitulo p {
 }
 /* FIN titulo y descripcion */
 
-/* Card Section */
+/* Card Section 
 .sectionCards {
     display: flex;
     flex-wrap: wrap;
@@ -54,6 +54,10 @@ section.descripcionYTitulo p {
 }
 .cardProductoBody p {
     font-size: 16px;
+} */
+.colCard { 
+    display: flex; 
+    justify-content: center; 
 }
 /* FIN Card Section */
 
