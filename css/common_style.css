@@ -11,7 +11,6 @@ body {
 main {
     width: 90%;
     margin: 20px auto;
-    min-height: calc(100vh - 180px);
 }
 
 hr.separador {
@@ -20,53 +19,40 @@ hr.separador {
 
 /* GRID */
 body {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer"
-    ;
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
 }
 header {
-    grid-area: header;
+    flex: 0 1 auto;
 }
 main {
-    grid-area: main;
+    flex: 1 1 auto;
 }
 footer {
-    grid-area: footer;
+    flex: 0 1 auto;
 }
 /* FIN GRID */
 
 /* NAVBAR */
-/* background-color: #8ECAE6; */
 nav {
-    background: #ee0979;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #023047;
 }
 .navbar-light .navbar-nav .nav-link.active {
-    font-weight: bold;
-    color: black;
-}
-.navbar-light .navbar-nav .nav-link{
     color: white;
 }
-.nav-link:hover {
-    font-weight: bold;
-    color: black;
+.navbar-light .navbar-nav .nav-link{
+    color: #ffffffb9;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: white;
     transform: scale(1.1, 1.1);
 }
 /* FIN NAVBAR */
 
 /* Footer */
-/* background-color: #8ECAE6; */
 footer {
-    background: #41295a;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #023047;
 }
 .logoFooter {
     width: 30px;
