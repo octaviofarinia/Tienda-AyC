@@ -17,7 +17,7 @@ hr.separador {
     margin: 15px 0px;
 }
 
-/* GRID */
+/* Layout */
 body {
     display: flex;
     flex-flow: column;
@@ -32,7 +32,7 @@ main {
 footer {
     flex: 0 1 auto;
 }
-/* FIN GRID */
+/* FIN Layout */
 
 /* NAVBAR */
 nav {
@@ -54,14 +54,39 @@ nav {
 footer {
     background-color: #023047;
 }
-.logoFooter {
-    width: 30px;
+.footerContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.footerContacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footerIconsDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footerIcon {
+    padding: 10px;
 }
 .linkFooter, .linkFooter:hover {
     text-decoration: none;
     color: white;
     font-weight: bold;
     font-size: 20px;
+}
+#iconFacebook {
+    padding-left: 10px;
+}
+.linkSocialNetworkIcon, .linkSocialNetworkIcon:hover {
+    padding: 0px 20px 0px 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
 }
 /* FIN Footer */
 
@@ -70,5 +95,20 @@ footer {
     .nav-link:hover {
         transform: none;
     }
+    #whatsappDiv {
+        margin-top: 20px;
+    }
 }
 /* FIN MEDIA 992px */
+
+/* MEDIA 576px */
+@media (max-width: 576px) {
+    .footerIconsDiv {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+/* FIN MEDIA 576px */

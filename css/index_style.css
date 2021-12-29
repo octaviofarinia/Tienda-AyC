@@ -83,9 +83,8 @@ TODO: Encontrar una sombra que me guste
 */
 /* FIN Categorias */
 
-/* MEDIA 800px */
-@media (max-width: 800px) {
-
+/* MEDIA 950px */
+@media (max-width: 950px) {
     /* Categorias */
     .catSection div {
         flex-direction: column;
@@ -106,8 +105,14 @@ TODO: Encontrar una sombra que me guste
         margin-bottom: 0px;
     }
     /* FIN Categorias */
+
+    /* Carousel */
+    #carouselIndex .carousel-inner .carousel-item img {
+        height: 400px;
+    }
+    /* FIN Carousel */
 }
-/* FIN MEDIA 768px */
+/* FIN MEDIA 950px */
 
 /* MEDIA 425px */
 @media (max-width: 425px) {
@@ -145,4 +150,4 @@ TODO: Encontrar una sombra que me guste
     /* FIN Categorias */
 
 }
-/* FIN MEDIA 375px */
+/* FIN MEDIA 425px */

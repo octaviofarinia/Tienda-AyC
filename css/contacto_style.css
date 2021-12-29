@@ -1,6 +1,3 @@
-
-
-
 /* Medios de contacto */
 .sectionMediosContacto {
     display: flex;
@@ -44,8 +41,21 @@ form.formularioContacto {
     display: flex;
     flex-direction: column;
 }
-
+.bloqueEmail {
+    margin-top: 10px;
+}
 .botonEnviar {
     margin-top: 20px;
 }
 /* FIN Formulario de contacto */
+
+/* MEDIA 768px */
+@media (max-width: 768px) {
+    .bloqueNombre, .bloqueConsulta, .newsletterDiv {
+        margin-top: 10px;
+    }
+    .tipoConsultaDiv {
+        margin-top: 20px;
+    }
+}
+/* FIN MEDIA 768px */
