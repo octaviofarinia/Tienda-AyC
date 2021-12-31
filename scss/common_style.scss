@@ -1,0 +1,116 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Raleway', sans-serif;
+	display: flex;
+	flex-flow: column;
+	height: 100vh;
+}
+hr.separador {
+    margin: 15px 0px;
+}
+
+// LAYOUT
+main {
+    width: 90%;
+	margin: 20px auto;
+	flex: 1 1 auto;
+}
+header {
+    flex: 0 1 auto;
+}
+footer {
+    flex: 0 1 auto;
+	background-color: #023047;
+}
+
+//NAVBAR
+nav {
+    background-color: #023047;
+}
+.navbar-light {
+	.navbar-nav {
+		.nav-link.active {
+			color: white;
+		}
+		.nav-link {
+			color: #ffffffb9;
+			&:hover {
+				color: white;
+				transform: scale(1.1, 1.1);
+			}
+		}
+	}
+}
+
+//FOOTER
+.footerContent {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.footerContacto {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.footerIconsDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.footerIcon {
+	padding: 10px;
+}
+.linkFooter {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	&:hover {
+		text-decoration: none;
+		color: white;
+		font-weight: bold;
+		font-size: 20px;
+	}
+}
+#iconFacebook {
+	padding-left: 10px;
+}
+.linkSocialNetworkIcon {
+	padding: 0px 20px 0px 10px;
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
+	&:hover {
+		padding: 0px 20px 0px 10px;
+		text-decoration: none;
+		color: white;
+		font-size: 15px;
+	}
+}
+
+//MEDIA QUERIES
+@media (max-width: 992px) {
+	.nav-link {
+		&:hover {
+			transform: none;
+		}
+	}
+	#whatsappDiv {
+		margin-top: 20px;
+	}
+}
+@media (max-width: 576px) {
+	.footerIconsDiv {
+		margin-top: 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+	}
+}

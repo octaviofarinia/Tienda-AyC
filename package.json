@@ -1,0 +1,25 @@
+{
+  "name": "tienda-ayc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css-index": "node-sass --include-path scss scss/index/index_style.scss css/index_style.css",
+    "build-css-common": "node-sass --include-path scss scss/common_style.scss css/common_style.css",
+    "build-css-categorias": "node-sass --include-path scss scss/categorias/categoria_style.scss css/categoria_style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octaviofarinia/Tienda-AyC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/octaviofarinia/Tienda-AyC/issues"
+  },
+  "homepage": "https://github.com/octaviofarinia/Tienda-AyC#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
