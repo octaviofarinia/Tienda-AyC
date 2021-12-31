@@ -1,0 +1,31 @@
+main {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: min-content auto;
+	grid-template-areas: 
+    "descripcionYTitulo"
+    "sectionCards";
+}
+
+//DESCRIPCION GENERAL
+section.descripcionYTitulo {
+    grid-area: descripcionYTitulo;
+	width: 100%;
+	h1 {
+        text-align: center;
+		margin-bottom: 10px;
+	}
+	p {
+        text-align: center;
+		font-size: 18px;
+	}
+}
+
+//SECTION CARDS
+.sectionCards {
+    grid-area: sectionCards;
+}
+.colCard {
+	display: flex;
+	justify-content: center;
+}

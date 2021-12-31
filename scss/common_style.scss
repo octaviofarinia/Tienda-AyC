@@ -1,3 +1,10 @@
+//VARIABLES
+$primary-nav-footer-color: #023047;
+$nav-font-color: #ffffffb9;
+$nav-hover-font-color: white;
+$footer-font-color: white;
+
+//SCSS
 * {
 	margin: 0px;
 	padding: 0px;
@@ -24,22 +31,22 @@ header {
 }
 footer {
     flex: 0 1 auto;
-	background-color: #023047;
+	background-color: $primary-nav-footer-color;
 }
 
 //NAVBAR
 nav {
-    background-color: #023047;
+    background-color: $primary-nav-footer-color;
 }
 .navbar-light {
 	.navbar-nav {
 		.nav-link.active {
-			color: white;
+			color: $nav-hover-font-color;
 		}
 		.nav-link {
-			color: #ffffffb9;
+			color: $nav-font-color;
 			&:hover {
-				color: white;
+				color: $nav-hover-font-color;
 				transform: scale(1.1, 1.1);
 			}
 		}
@@ -68,12 +75,12 @@ nav {
 }
 .linkFooter {
 	text-decoration: none;
-	color: white;
+	color: $footer-font-color;
 	font-weight: bold;
 	font-size: 20px;
 	&:hover {
 		text-decoration: none;
-		color: white;
+		color: $footer-font-color;
 		font-weight: bold;
 		font-size: 20px;
 	}

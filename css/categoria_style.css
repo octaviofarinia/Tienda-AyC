@@ -1,74 +1,22 @@
-/* Grid */
 main {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: min-content auto;
-    grid-template-areas: 
-        "descripcionYTitulo"
-        "sectionCards"
-    ;
-}
-.descripcionYTitulo {
-    grid-area: descripcionYTitulo;
-}
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content auto;
+  grid-template-areas: "descripcionYTitulo" "sectionCards"; }
+
+section.descripcionYTitulo {
+  grid-area: descripcionYTitulo;
+  width: 100%; }
+  section.descripcionYTitulo h1 {
+    text-align: center;
+    margin-bottom: 10px; }
+  section.descripcionYTitulo p {
+    text-align: center;
+    font-size: 18px; }
+
 .sectionCards {
-    grid-area: sectionCards;
-}
-/* FIN Grid */
+  grid-area: sectionCards; }
 
-/* titulo y descripcion */
-.descripcionYTitulo {
-    width: 100%;
-}
-section.descripcionYTitulo h1 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-section.descripcionYTitulo p {
-    text-align: center;
-    font-size: 18px;
-}
-/* FIN titulo y descripcion */
-
-/* Card Section 
-.sectionCards {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-}
-.cardProducto {
-    border: solid black 2px;
-    margin: 10px;
-}
-
-.cardProductoBody {
-    margin-bottom: 15px;
-}
-.cardProductoBody h5, .cardProductoBody p {
-    text-align: center;
-    margin-top: 5px;
-}
-.cardProductoBody h5 {
-    font-size: 18px;
-}
-.cardProductoBody p {
-    font-size: 16px;
-} */
-.colCard { 
-    display: flex; 
-    justify-content: center; 
-}
-/* FIN Card Section */
-
-/* MEDIA 800px */
-@media (max-width: 800px) {
-
-}
-/* FIN MEDIA 800px */
-
-/* MEDIA 425px */
-@media (max-width: 425px) {
-
-}
-/* FIN MEDIA 425px */
+.colCard {
+  display: flex;
+  justify-content: center; }
