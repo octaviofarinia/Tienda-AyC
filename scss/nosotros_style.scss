@@ -1,17 +1,15 @@
+@import "mixins";
+
 .descripcionSection {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	@include flex-dir-justify-align(column, center, null);
 }
 #containerUno {
 	grid-area: containerUno;
-	display: flex;
-	flex-direction: row;
+	@include flex-dir-justify-align(row, null, null);
 }
 #containerDos {
 	grid-area: containerDos;
-	display: flex;
-	flex-direction: row-reverse;
+	@include flex-dir-justify-align(row-reverse, null, null);
 }
 
 .descripcionSectionBody {
@@ -25,10 +23,7 @@ img.descripcionSectionImg {
 
 //MEDIA QUERIES
 @media (max-width: 600px) {
-	#containerUno {
-		flex-direction: column;
-	}
-	#containerDos {
+	#containerUno, #containerDos {
 		flex-direction: column;
 	}
 	img.descripcionSectionImg {

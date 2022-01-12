@@ -22,9 +22,7 @@ img.descripcionSectionImg {
   margin: auto 20px; }
 
 @media (max-width: 600px) {
-  #containerUno {
-    flex-direction: column; }
-  #containerDos {
+  #containerUno, #containerDos {
     flex-direction: column; }
   img.descripcionSectionImg {
     margin: 20px auto; }

@@ -7,23 +7,17 @@
   text-align: center;
   margin-bottom: 10px; }
 
-.celular {
+.celular, .email {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px; }
-  .celular p {
+  .celular p, .email p {
     margin: 0px 0px 0px 10px; }
 
-.email {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px; }
-  .email p {
-    margin: 0px 0px 0px 10px; }
+.email p {
+  margin: 0px 0px 0px 10px; }
 
 .sectionFormContacto {
   display: flex;
