@@ -1,0 +1,10 @@
+.descripcionGeneral {
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    p{
+        text-align: justify;
+        font-size: $descripcionGeneral-p-font-size;
+    }
+}
