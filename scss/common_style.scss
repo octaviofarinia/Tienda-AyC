@@ -4,6 +4,8 @@ $nav-font-color: #ffffffb9;
 $nav-hover-font-color: white;
 $footer-font-color: white;
 
+@import "mixins";
+
 //SCSS
 * {
 	margin: 0px;
@@ -55,19 +57,13 @@ nav {
 
 //FOOTER
 .footerContent {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	@include flex-dir-justify-align(row, space-around, null);
 }
 .footerContacto {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	@include flex-dir-justify-align(column, null ,center);
 }
 .footerIconsDiv {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	@include flex-dir-justify-align(row, center, null);
 	flex-wrap: wrap;
 }
 .footerIcon {
@@ -115,6 +111,7 @@ nav {
 @media (max-width: 576px) {
 	.footerIconsDiv {
 		margin-top: 30px;
+		@include flex-dir-justify-align(column, flex-start, null);
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;

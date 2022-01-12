@@ -1,0 +1,13 @@
+//MIXINS
+@mixin flex-dir-justify-align($direction: null, $justify: null, $align: null) {
+	display: flex;
+	@if($direction){
+		flex-direction: $direction;
+	}
+	@if($justify){
+		justify-content: $justify;
+	}
+	@if($align){
+		align-items: $align;
+	}
+}
