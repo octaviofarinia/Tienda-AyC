@@ -31,27 +31,21 @@ form.formularioContacto {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
 
-.bloqueNombre {
+.bloqueNombre, .bloqueEmail, .bloqueConsulta {
   display: flex;
   flex-direction: column; }
 
 .bloqueEmail {
-  display: flex;
-  flex-direction: column;
   margin-top: 10px; }
-
-.bloqueConsulta {
-  display: flex;
-  flex-direction: column; }
 
 .botonEnviar {
   margin-top: 20px; }
 
 @media (max-width: 768px) {
-  .bloqueNombre {
+  .bloqueNombre, .bloqueEmail {
     margin-top: 10px; }
   .bloqueConsulta {
     margin-top: 10px; }

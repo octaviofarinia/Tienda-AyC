@@ -24,32 +24,22 @@
 
 //FORMULARIO DE CONTACTO
 .sectionFormContacto {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	@include flex-dir-justify-align(column, null, center);
 }
 .encabezadoFormularioContacto {
 	text-align: center;
 }
 form.formularioContacto {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	@include flex-dir-justify-align(column, center, center);
 }
-.bloqueNombre {
+.bloqueNombre, .bloqueConsulta {
 	display: flex;
 	flex-direction: column;
 }
 .bloqueEmail {
-	display: flex;
-	flex-direction: column;
+	@extend .bloqueNombre;
 	margin-top: 10px;
-}
-.bloqueConsulta {
-	display: flex;
-	flex-direction: column;
 }
 .botonEnviar {
 	margin-top: 20px;
