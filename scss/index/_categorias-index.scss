@@ -1,3 +1,5 @@
+@import "maps";
+
 .catSection {
     div.catCuadernos {
         flex-direction: row-reverse;
@@ -16,7 +18,7 @@
             padding: 10px 5% 10px 5%;
             p.catTitle {
                 margin-top: 8%;
-                font-weight: 400;
+                font-weight: map-get($font-weights, "regular");
                 font-size: 50px;
                 a {
                     text-decoration: none;
@@ -24,7 +26,7 @@
                 }
             }
             p.catDescription {
-                font-weight: 400;
+                font-weight: map-get($font-weights, "regular");
                 font-size: 20px;
             }
         }

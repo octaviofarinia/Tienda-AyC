@@ -58,12 +58,12 @@ nav {
 .linkFooter {
   text-decoration: none;
   color: white;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 20px; }
   .linkFooter:hover {
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 20px; }
 
 #iconFacebook {

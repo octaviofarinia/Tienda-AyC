@@ -5,6 +5,7 @@ $nav-hover-font-color: white;
 $footer-font-color: white;
 
 @import "mixins";
+@import "maps";
 
 //SCSS
 * {
@@ -72,12 +73,12 @@ nav {
 .linkFooter {
 	text-decoration: none;
 	color: $footer-font-color;
-	font-weight: bold;
+	font-weight: map-get($font-weights, "bold");
 	font-size: 20px;
 	&:hover {
 		text-decoration: none;
 		color: $footer-font-color;
-		font-weight: bold;
+		font-weight: map-get($font-weights, "bold");
 		font-size: 20px;
 	}
 }
