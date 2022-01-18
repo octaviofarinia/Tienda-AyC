@@ -1,3 +1,5 @@
+@import "maps";
+
 main {
 	display: grid;
 	grid-template-columns: 100%;
@@ -28,4 +30,15 @@ section.descripcionYTitulo {
 .colCard {
 	display: flex;
 	justify-content: center;
+}
+.card-body {
+	h5 {
+		font-weight: map-get($font-weights, "bold");
+	}
+	p {
+		text-align: justify;
+	}
+}
+.cardCategoria {
+	min-width: none;
 }

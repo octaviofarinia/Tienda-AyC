@@ -20,3 +20,12 @@ section.descripcionYTitulo {
 .colCard {
   display: flex;
   justify-content: center; }
+
+.card-body h5 {
+  font-weight: 700; }
+
+.card-body p {
+  text-align: justify; }
+
+.cardCategoria {
+  min-width: none; }
