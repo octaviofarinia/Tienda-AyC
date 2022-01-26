@@ -10,7 +10,8 @@
     "build-css-categorias": "node-sass --include-path scss scss/categorias/categoria_style.scss css/categoria_style.css",
     "build-css-contacto": "node-sass --include-path scss scss/contacto_style.scss css/contacto_style.css",
     "build-css-nosotros": "node-sass --include-path scss scss/nosotros_style.scss css/nosotros_style.css",
-    "build-css": "npm run build-css-common && npm run build-css-index && npm run build-css-categorias && npm run build-css-contacto && npm run build-css-nosotros"
+    "build-css-error": "node-sass --include-path scss scss/error_style.scss css/error_style.css",
+    "build-css": "npm run build-css-common && npm run build-css-index && npm run build-css-categorias && npm run build-css-contacto && npm run build-css-nosotros && npm run build-css-error"
   },
   "repository": {
     "type": "git",
