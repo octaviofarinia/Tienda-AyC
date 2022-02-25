@@ -42,17 +42,17 @@ footer {
 nav {
     background-color: $primary-nav-footer-color;
 }
-.navbar-light {
-	.navbar-nav {
-		.nav-link.active {
-			color: $nav-hover-font-color;
-		}
-		.nav-link {
-			color: $nav-font-color;
-			&:hover {
-				color: $nav-hover-font-color;
-				transform: scale(1.1, 1.1);
-			}
+#navbarHeader {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+#navbarLogoImg {
+	width: 47px;
+}
+#divCarritoNavbar {
+	button {
+		span {
+			text-align: center;
 		}
 	}
 }
