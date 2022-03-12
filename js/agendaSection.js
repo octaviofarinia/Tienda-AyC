@@ -103,6 +103,6 @@ botonesComprar.forEach(boton => {
 
         let productoSeleccinado = buscarProductoEnVentaPorNombre(nombreProducto);
 
-        cargarProductoEnCarrito(productoSeleccinado);
+        cargarProductoEnCarrito(productoSeleccinado, true);
     })
 });

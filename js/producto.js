@@ -1,6 +1,7 @@
 class Producto {
 
     constructor(nombre, descripcion, precio, categoria, sourceFolder) {
+        this.id = nombre.split(' ').join('_');
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;

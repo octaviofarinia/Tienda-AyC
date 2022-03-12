@@ -1,17 +1,57 @@
+class ProductMapItem {
+    constructor(producto, cantidad) {
+        this.producto = producto;
+        this.cantidad = cantidad;
+    }
+}
+
+class ProductMap {
+
+    constructor() {
+        this.map = new Map();
+    }
+
+    has(product) {
+        for (const [key, value] of this.map) {
+            if (key === product.id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    set(product, cantidad) {
+        this.map.set(product.id, new ProductMapItem(product, cantidad));
+    }
+
+    get(product) {
+        for (const [key, value] of this.map) {
+            if (key === product.id) {
+                return value.producto;
+            }
+        }
+        return false;
+    }
+
+    getCantidad(product) {
+        for (const [key, value] of this.map) {
+            if (key === product.id) {
+                return value.producto.cantidad;
+            }
+        }
+        return false;
+    }
+
+}
+
+
 class Carrito {
 
     constructor() {
         this.fechaCreacion = new Date();
         this.usuario = "Pepe Honguito";
         this.total = 0;
-        this.productos = [];
-    }
-
-    calcularTotal() {
-        this.productos.forEach(producto => {
-            this.total += producto.precio;
-        });
-        return this.total;
+        this.productos = new ProductMap();
     }
 
     actualizarTotal(producto) {
@@ -19,24 +59,76 @@ class Carrito {
         return this.total;
     }
 
+
+    agregarProductoLS(producto) {
+        let current = new Date();
+        let currentDateTime = current.getFullYear() + '/' + (current.getMonth() + 1) + '/' + current.getDate() + "-" + current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds() + "." + current.getMilliseconds();
+
+        localStorage.setItem(
+            "producto_" + producto.categoria + "_" + producto.id + "_" + currentDateTime,
+            JSON.stringify(producto)
+        );
+    }
+
     agregarProducto(producto) {
-        this.productos.push(producto);
+        if (this.productos.has(producto)) {
+            this.productos.set(producto, this.productos.getCantidad(producto) + 1);
+        } else {
+            this.productos.set(producto, 1);
+        }
         this.actualizarTotal(producto);
     }
+
+    buscarProductoPorNombre(producto) {
+
+    }
+
+
 
 }
 
 let carrito = new Carrito();
+cargaInicialLocalStorage();
 
-function cargarProductoEnCarrito(producto) {
+function cargaInicialLocalStorage() {
+    for (let i = 0; i < localStorage.length; i++) {
+        let clave = localStorage.key(i);
+        if (clave.startsWith("producto_")) {
+            let productoLS = JSON.parse(localStorage.getItem(clave));
+            cargarProductoEnCarrito(productoLS, false);
+        }
+    }
+}
 
+function cargarProductoEnCarrito(producto, perisistirEnLS) {
+    console.table(carrito.productos);
+
+    let cargarEnDOM = false;
+    if (!isProductoInCarritoDOM(producto)) {
+        cargarEnDOM = true;
+    }
+
+    carrito.agregarProducto(producto);
+
+    if(perisistirEnLS){
+        carrito.agregarProductoLS(producto);
+    }
+
+    if (cargarEnDOM) {
+        cargarProductoCarritoDOM(producto);
+    } else {
+        modificarCantidadProductoCarritoDOM(producto)
+    }
+}
+
+function cargarProductoCarritoDOM(producto) {
     let tableBody = document.querySelector("#modalCarritoTableBody");
 
     let filaTabla = document.createElement("tr");
+    filaTabla.id = "carrito_tr_" + producto.id;
 
-    //pendiente agregar logica para que cambie la cantidad cuando el producto ya estaba en la lista en lugar de seguir poniendo mas filas
     filaTabla.innerHTML =
-    `
+        `
         <td>${producto.nombre}</td>
         <td>${producto.precio}</td>
         <td>1</td>
@@ -44,8 +136,17 @@ function cargarProductoEnCarrito(producto) {
 
     tableBody.appendChild(filaTabla);
 
-    carrito.agregarProducto(producto);
-
     let totalModalCarrito = document.querySelector("#totalModalCarrito");
     totalModalCarrito.innerHTML = '$' + carrito.total;
+}
+
+function modificarCantidadProductoCarritoDOM(producto) {
+    let tdCantidad = document.querySelector("#carrito_tr_" + producto.id).children[2];
+    tdCantidad.innerHTML = carrito.productos.getCantidad(producto);
+
+    console.log(tdCantidad);
+}
+
+function isProductoInCarritoDOM(producto) {
+    return document.querySelector("#carrito_tr_" + producto.id);
 }
