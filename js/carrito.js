@@ -5,6 +5,7 @@ class ProductMapItem {
     }
 }
 
+// la key es el producto.id y el value es un ProductMapItem, asi puedo guardar el producto entero y la cantidad correspondiente.
 class ProductMap {
 
     constructor() {
@@ -27,16 +28,26 @@ class ProductMap {
     get(product) {
         for (const [key, value] of this.map) {
             if (key === product.id) {
+                return value;
+            }
+        }
+        return false;
+    }
+
+    getProducto(product) {
+        for (const [key, value] of this.map) {
+            if (key === product.id) {
                 return value.producto;
             }
         }
         return false;
     }
 
+
     getCantidad(product) {
         for (const [key, value] of this.map) {
             if (key === product.id) {
-                return value.producto.cantidad;
+                return value.cantidad;
             }
         }
         return false;
@@ -122,6 +133,8 @@ function cargarProductoEnCarrito(producto, perisistirEnLS) {
 }
 
 function cargarProductoCarritoDOM(producto) {
+    let cantidadProducto = carrito.productos.getCantidad(producto);
+
     let tableBody = document.querySelector("#modalCarritoTableBody");
 
     let filaTabla = document.createElement("tr");
@@ -131,7 +144,7 @@ function cargarProductoCarritoDOM(producto) {
         `
         <td>${producto.nombre}</td>
         <td>${producto.precio}</td>
-        <td>1</td>
+        <td>${cantidadProducto}</td>
     `;
 
     tableBody.appendChild(filaTabla);
@@ -144,7 +157,8 @@ function modificarCantidadProductoCarritoDOM(producto) {
     let tdCantidad = document.querySelector("#carrito_tr_" + producto.id).children[2];
     tdCantidad.innerHTML = carrito.productos.getCantidad(producto);
 
-    console.log(tdCantidad);
+    let totalModalCarrito = document.querySelector("#totalModalCarrito");
+    totalModalCarrito.innerHTML = '$' + carrito.total;
 }
 
 function isProductoInCarritoDOM(producto) {

@@ -58,7 +58,6 @@ let agendaManicura = new Producto(
 productosEnVenta.push(agendaDiaria);
 productosEnVenta.push(agendaSemanalFormal);
 productosEnVenta.push(agendaSemanalInformal);
-productosEnVenta.push(agendaSemanalFormal);
 productosEnVenta.push(agendaPerpetuaFormal);
 productosEnVenta.push(agendaPerpetuaInformal);
 productosEnVenta.push(agendaEmprendedor);
