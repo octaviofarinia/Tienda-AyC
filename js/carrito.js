@@ -12,9 +12,9 @@ class ProductMap {
         this.map = new Map();
     }
 
-    has(product) {
+    has( {id} ) {
         for (const [key, value] of this.map) {
-            if (key === product.id) {
+            if (key === id) {
                 return true;
             }
         }
@@ -34,9 +34,9 @@ class ProductMap {
         return false;
     }
 
-    getProducto(product) {
+    getProducto(id) {
         for (const [key, value] of this.map) {
-            if (key === product.id) {
+            if (key === id) {
                 return value.producto;
             }
         }
@@ -44,9 +44,9 @@ class ProductMap {
     }
 
 
-    getCantidad(product) {
+    getCantidad(id) {
         for (const [key, value] of this.map) {
-            if (key === product.id) {
+            if (key === id) {
                 return value.cantidad;
             }
         }
@@ -65,8 +65,8 @@ class Carrito {
         this.productos = new ProductMap();
     }
 
-    actualizarTotal(producto) {
-        this.total = this.total + producto.precio;
+    actualizarTotal( {precio} ) {
+        this.total += precio;
         return this.total;
     }
 
@@ -83,18 +83,12 @@ class Carrito {
 
     agregarProducto(producto) {
         if (this.productos.has(producto)) {
-            this.productos.set(producto, this.productos.getCantidad(producto) + 1);
+            this.productos.set(producto, this.productos.getCantidad(producto.id) + 1);
         } else {
             this.productos.set(producto, 1);
         }
         this.actualizarTotal(producto);
     }
-
-    buscarProductoPorNombre(producto) {
-
-    }
-
-
 
 }
 
@@ -112,38 +106,29 @@ function cargaInicialLocalStorage() {
 }
 
 function cargarProductoEnCarrito(producto, perisistirEnLS) {
-    console.table(carrito.productos);
-
-    let cargarEnDOM = false;
-    if (!isProductoInCarritoDOM(producto)) {
-        cargarEnDOM = true;
-    }
+    let cargarEnDOM = !isProductoInCarritoDOM(producto);
 
     carrito.agregarProducto(producto);
 
-    if(perisistirEnLS){
-        carrito.agregarProductoLS(producto);
-    }
+    //esto funciona porque la segunda propocicion del && solo se evalua si la primera es verdadera, si "persistirEnLS" es falso el interprete directamente ignora la segunda parte.
+    //porque no es necesario, en cambio se la primer parte es verdadera el interprete se ve obliga a obtener el valor de la segunda parte entonces debe ejecutar la funcion "carrito.agregarProductoLS(producto)" para obtener algo que evaluar
+    perisistirEnLS && carrito.agregarProductoLS(producto);
 
-    if (cargarEnDOM) {
-        cargarProductoCarritoDOM(producto);
-    } else {
-        modificarCantidadProductoCarritoDOM(producto)
-    }
+    cargarEnDOM ? cargarProductoCarritoDOM(producto) : modificarCantidadProductoCarritoDOM(producto);
 }
 
-function cargarProductoCarritoDOM(producto) {
-    let cantidadProducto = carrito.productos.getCantidad(producto);
+function cargarProductoCarritoDOM( {id, nombre, precio} ) {
+    let cantidadProducto = carrito.productos.getCantidad(id);
 
     let tableBody = document.querySelector("#modalCarritoTableBody");
 
     let filaTabla = document.createElement("tr");
-    filaTabla.id = "carrito_tr_" + producto.id;
+    filaTabla.id = "carrito_tr_" + id;
 
     filaTabla.innerHTML =
-        `
-        <td>${producto.nombre}</td>
-        <td>${producto.precio}</td>
+    `
+        <td>${nombre}</td>
+        <td>${precio}</td>
         <td>${cantidadProducto}</td>
     `;
 
@@ -153,14 +138,14 @@ function cargarProductoCarritoDOM(producto) {
     totalModalCarrito.innerHTML = '$' + carrito.total;
 }
 
-function modificarCantidadProductoCarritoDOM(producto) {
-    let tdCantidad = document.querySelector("#carrito_tr_" + producto.id).children[2];
-    tdCantidad.innerHTML = carrito.productos.getCantidad(producto);
+function modificarCantidadProductoCarritoDOM( {id} ) {
+    let tdCantidad = document.querySelector("#carrito_tr_" + id).children[2];
+    tdCantidad.innerHTML = carrito.productos.getCantidad(id);
 
     let totalModalCarrito = document.querySelector("#totalModalCarrito");
     totalModalCarrito.innerHTML = '$' + carrito.total;
 }
 
-function isProductoInCarritoDOM(producto) {
-    return document.querySelector("#carrito_tr_" + producto.id);
+function isProductoInCarritoDOM( {id} ) {
+    return document.querySelector("#carrito_tr_" + id);
 }

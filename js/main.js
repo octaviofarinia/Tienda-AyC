@@ -9,7 +9,6 @@ function include(file) {
 
 }
 
-
 if(window.location.href.endsWith('index.html')){
     include('js/wow.min.js');
     include('js/carrito.js');
