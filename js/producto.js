@@ -24,7 +24,7 @@ function crearCardProducto({categoria, sourceFolder, nombre, descripcion, precio
     divCard.innerHTML =
         `<div class="card cardCategoria">
             <div class="">
-                <img class="card-img-top" src="../media/img/${categoria}/${sourceFolder}/a.jpg" alt="imagen del interior de una agenda">
+                <img class="card-img-top" src="../media/img/${categoria}/${sourceFolder}/1.jpg" alt="imagen del interior de una agenda">
             </div>
             <div class="card-body pb-0">
                 <h5 class="card-title">${nombre}</h5>

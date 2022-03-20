@@ -13,11 +13,19 @@ if(window.location.href.endsWith('index.html')){
     include('js/wow.min.js');
     include('js/carrito.js');
     include('js/producto.js');
-    include('js/agendaSection.js');
 }else {
     include('../js/wow.min.js');
     include('../js/carrito.js');
     include('../js/producto.js');
-    include('../js/agendaSection.js');
 }
 
+if (window.location.href.endsWith('agendas.html')) {
+    include('../js/agendasSection.js');
+    include('../js/compraService.js');
+} else if (window.location.href.endsWith('cuadernos.html')){
+    include('../js/cuadernosSection.js');
+    include('../js/compraService.js');
+} else if (window.location.href.endsWith('especiales.html')){
+    include('../js/especialesSection.js');
+    include('../js/compraService.js');
+}
