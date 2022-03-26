@@ -17,7 +17,7 @@ function buscarProductoEnVentaPorNombre(nombre) {
     return productosEnVenta.find((producto) => producto.nombre.toUpperCase() === nombre.toUpperCase());
 }
 
-//cargar productos de agendas en el dom
+//crear el html para una card de un producto
 function crearCardProducto({categoria, sourceFolder, nombre, descripcion, precio}) {
     let divCard = document.createElement("div");
     divCard.classList.add("col", "colCard");

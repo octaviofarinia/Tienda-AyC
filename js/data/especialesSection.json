@@ -1,0 +1,7 @@
+[
+    {"id":"Pediatrico","nombre":"Pediatrico","descripcion":"Acompaña el crecimiento de tu hijo registrando cada dato referido a su salud y desarrollo.","precio":1500,"categoria":"especiales","sourceFolder":"Pediatrico"},
+    {"id":"Recetas","nombre":"Recetas","descripcion":"Este es un regalo ideal para los apasionados de la cocina.","precio":1400,"categoria":"especiales","sourceFolder":"Recetas"},
+    {"id":"Viajes","nombre":"Viajes","descripcion":"Cuaderno para aventureros inquietos que buscan descubrir nuevos horizontes y redescubrir los conocidos.","precio":1650,"categoria":"especiales","sourceFolder":"Viajes"},
+    {"id":"Dibujo","nombre":"Dibujo","descripcion":"Los amantes del lápiz y el papel podrán plasmar aquí toda su creatividad.","precio":1600,"categoria":"especiales","sourceFolder":"Dibujo"},
+    {"id":"Mandalas","nombre":"Mandalas","descripcion":"Relajantes mandalas para colorear harán mas apacibles tus momentos de ocio.","precio":1550,"categoria":"especiales","sourceFolder":"Mandalas"}
+]

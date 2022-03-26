@@ -19,13 +19,6 @@ if(window.location.href.endsWith('index.html')){
     include('../js/producto.js');
 }
 
-if (window.location.href.endsWith('agendas.html')) {
-    include('../js/agendasSection.js');
-    include('../js/compraService.js');
-} else if (window.location.href.endsWith('cuadernos.html')){
-    include('../js/cuadernosSection.js');
-    include('../js/compraService.js');
-} else if (window.location.href.endsWith('especiales.html')){
-    include('../js/especialesSection.js');
-    include('../js/compraService.js');
+if (window.location.href.endsWith('agendas.html') || window.location.href.endsWith('cuadernos.html') || window.location.href.endsWith('especiales.html')) {
+    include('../js/productSectionLoader.js');
 }

@@ -1,0 +1,9 @@
+[
+    {"id":"Semanal_Formal","nombre":"Semanal Formal","descripcion":"Ideal para gestionar los turnos de tu consultorio, tu estudio o cualquier actividad que requiera una planificación semanal con horarios.","precio":1100,"categoria":"agendas","sourceFolder":"Semanal_formal"},
+    {"id":"Perpetua_Formal","nombre":"Perpetua Formal","descripcion":"Se denomina perpetua porque no trae impresos ni la fecha ni los meses, sí los días de la semana. Ideal para comenzar a usarla en cualquier epoca del año.","precio":1150,"categoria":"agendas","sourceFolder":"Perpetua_formal"},
+    {"id":"Manicura","nombre":"Manicura","descripcion":"Vas a poder organizar tu negocio y tener registro de todos tus clientes.","precio":1300,"categoria":"agendas","sourceFolder":"Manicura"},
+    {"id":"Emprendedor","nombre":"Emprendedor","descripcion":"Herramienta fundamental para organizar tu emprendimiento.","precio":1500,"categoria":"agendas","sourceFolder":"Emprendedor"},
+    {"id":"Perpetua_Informal","nombre":"Perpetua Informal","descripcion":"Otra opción en perpetua es esta agenda con un diseño más relajado y divertido.","precio":1000,"categoria":"agendas","sourceFolder":"Perpetua_informal"},
+    {"id":"Diaria","nombre":"Diaria","descripcion":"Esta agenda es la más elegida en nuestros 10 años de trayectoria. Ideal para cualquier actividad que realices, profesional, recreativa o personal.","precio":1200,"categoria":"agendas","sourceFolder":"Diaria"},
+    {"id":"Semanal_Informal","nombre":"Semanal Informal","descripcion":"Con un diseño más desestructurado, fue pensada para personas más inquietas y creativas.","precio":1050,"categoria":"agendas","sourceFolder":"Semanal_informal"}
+]

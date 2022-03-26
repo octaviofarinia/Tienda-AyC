@@ -1,0 +1,10 @@
+[
+    {"id":"Liso","nombre":"Liso","descripcion":"Este cuaderno es ideal para expresar sobre el papel todas tus ideas en forma de dibujos, bocetos, palabras, etc.","precio":1500,"categoria":"cuadernos","sourceFolder":"Liso"},
+    {"id":"Rayas","nombre":"Rayas","descripcion":"Con este cuaderno podes tomar notas, apuntes y anotar todas tus ideas para que no se te olviden.","precio":1400,"categoria":"cuadernos","sourceFolder":"Rayas"},
+    {"id":"Cuadros","nombre":"Cuadros","descripcion":"Con este cuaderno podes tomar notas, apuntes y anotar todas tus ideas para que no se te olviden.","precio":1350,"categoria":"cuadernos","sourceFolder":"Cuadros"},
+    {"id":"Puntos","nombre":"Puntos","descripcion":"Este cuaderno es ideal para implementar tu propia Bullet Journal ya que cada hoja cuenta con una grilla de puntos.","precio":1450,"categoria":"cuadernos","sourceFolder":"Puntos"},
+    {"id":"Liso_con_Frases","nombre":"Liso con Frases","descripcion":"Este cuaderno es ideal para expresar sobre el papel todas tus ideas en forma de dibujos, bocetos, palabras, etc.","precio":1550,"categoria":"cuadernos","sourceFolder":"Liso_Con_Frases"},
+    {"id":"Rayas_con_Frases","nombre":"Rayas con Frases","descripcion":"Con este cuaderno podes tomar notas, apuntes y anotar todas tus ideas para que no se te olviden.","precio":1450,"categoria":"cuadernos","sourceFolder":"Rayas_Con_Frases"},
+    {"id":"Cuadros_con_Frases","nombre":"Cuadros con Frases","descripcion":"Con este cuaderno podes tomar notas, apuntes y anotar todas tus ideas para que no se te olviden.","precio":1400,"categoria":"cuadernos","sourceFolder":"Cuadros_Con_Frases"},
+    {"id":"Costura","nombre":"Costura","descripcion":"Este cuaderno te ayudara a diagramar y concretar con exactitud los patrones y moldes que tu cliente requiere.","precio":1600,"categoria":"cuadernos","sourceFolder":"Costura"}
+]
