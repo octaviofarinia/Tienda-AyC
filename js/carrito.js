@@ -115,6 +115,24 @@ function cargarProductoEnCarrito(producto, perisistirEnLS) {
     perisistirEnLS && carrito.agregarProductoLS(producto);
 
     cargarEnDOM ? cargarProductoCarritoDOM(producto) : modificarCantidadProductoCarritoDOM(producto);
+
+    actualizarCantCarritoSpan();
+
+}
+
+function actualizarCantCarritoSpan() {
+    let carritoSpan = document.querySelector("#spanCarritoCantItems");
+    let innerHTMLCarritoSpan = carritoSpan.innerHTML;
+
+    if (innerHTMLCarritoSpan == "") {
+        console.log("vacio");
+
+        carritoSpan.innerHTML = " 1 ";
+
+    } else {
+        let previaCant = parseInt(innerHTMLCarritoSpan.trim(" "));
+        carritoSpan.innerHTML = " " + (previaCant+1) + " ";
+    }
 }
 
 function cargarProductoCarritoDOM( {id, nombre, precio} ) {
