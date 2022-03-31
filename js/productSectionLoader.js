@@ -42,8 +42,6 @@ const pedirProductosSection = async (nombreSection) => {
                 }
             }).showToast();
 
-            console.log("compro el producto: " + nombreProducto);
-
             let productoSeleccinado = buscarProductoEnVentaPorNombre(nombreProducto);
 
             cargarProductoEnCarrito(productoSeleccinado, true);

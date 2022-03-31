@@ -1,7 +1,7 @@
 class Producto {
 
     constructor(nombre, descripcion, precio, categoria, sourceFolder) {
-        this.id = nombre.split(' ').join('_');
+        this.id = crearIdProducto(nombre);
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
@@ -38,3 +38,19 @@ function crearCardProducto({categoria, sourceFolder, nombre, descripcion, precio
         </div>`;
     return divCard;
 };
+
+function eliminarProductoEnLS(id, categoria) {
+    for (let i = 0; i < localStorage.length; i++) {
+        let clave = localStorage.key(i);
+        let claveRegex = clave.replace(/producto_[a-zA-Z]*[_]/g, '');
+        claveRegex = clave.match(/[a-zA-Z_]*/g)[0];
+        if (claveRegex) {
+            localStorage.removeItem(clave);
+            break;
+        }
+    }
+}
+
+function crearIdProducto(nombre) {
+    return nombre.split(' ').join('_');
+}
