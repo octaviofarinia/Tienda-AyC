@@ -12,6 +12,18 @@ class ProductMap {
         this.map = new Map();
     }
 
+    [Symbol.iterator]() { return this.map.entries() }
+
+    delete(product) {
+        for (const [key, value] of this.map) {
+            if (key === product.id) {
+                console.log(this.map.delete(key));
+                return true;
+            }
+        }
+        return false;
+    }
+
     has( {id} ) {
         for (const [key, value] of this.map) {
             if (key === id) {
@@ -81,12 +93,13 @@ class Carrito {
     eliminarProductoUnidad(nombre) {
         let productoMapItem = this.productos.getPMI(crearIdProducto(nombre));
 
-        if (productoMapItem.cantidad > 0) {
+        if (productoMapItem.cantidad > 1) {
             this.productos.set(productoMapItem.producto, (productoMapItem.cantidad - 1));
-            this.actualizarTotal({precio: (productoMapItem.producto.precio * -1)});
-        } else {
-            console.log("CANTIDAD DE ESE PRODUCTO ES CERO, TODAVIA NO FUNCIONA ESA PARTE XD");
+        }else {
+            this.productos.delete(productoMapItem.producto);
         }
+        
+        this.actualizarTotal({precio: (productoMapItem.producto.precio * -1)});
 
         console.log( this.productos.getPMI(crearIdProducto(nombre)));
         console.log("nuevo total: " + this.total);
@@ -114,13 +127,16 @@ class Carrito {
 }
 
 let carrito = new Carrito();
-cargarModalCarritoEnDOM();
+cargarModalVacioCarritoEnDOM();
+let primerProductoDetectado = true;
 cargaInicialLocalStorage();
 
 function cargaInicialLocalStorage() {
     for (let i = 0; i < localStorage.length; i++) {
         let clave = localStorage.key(i);
         if (clave.startsWith("producto_")) {
+            if(carritoDomIsEmpty) cargarModalCarritoEnDOM();
+
             let productoLS = JSON.parse(localStorage.getItem(clave));
             cargarProductoEnCarrito(productoLS, false);
         }
@@ -128,19 +144,22 @@ function cargaInicialLocalStorage() {
 }
 
 function cargarProductoEnCarrito(producto, perisistirEnLS) {
+
+    
     let cargarEnDOM = !isProductoInCarritoDOM(producto);
-
+    
     carrito.agregarProducto(producto);
-
+    
     perisistirEnLS && carrito.agregarProductoLS(producto);
-
+    
     cargarEnDOM ? cargarProductoCarritoDOM(producto) : modificarCantidadProductoCarritoDOM(producto);
-
+    
     actualizarCantCarritoSpan();
 
 }
 
 function actualizarCantCarritoSpan() {
+    
     let carritoSpan = document.querySelector("#spanCarritoCantItems");
     let innerHTMLCarritoSpan = carritoSpan.innerHTML;
 
@@ -152,8 +171,23 @@ function actualizarCantCarritoSpan() {
     }
 }
 
+function restarCantCarritoSpan() {
+    let carritoSpan = document.querySelector("#spanCarritoCantItems");
+    let innerHTMLCarritoSpan = carritoSpan.innerHTML;
+
+    if (innerHTMLCarritoSpan == " 1 ") {
+        carritoSpan.innerHTML = "";
+        if (carritoDomIsEmpty) cargarModalVacioCarritoEnDOM();
+    } else {
+        let previaCant = parseInt(innerHTMLCarritoSpan.trim(" "));
+        carritoSpan.innerHTML = " " + (previaCant-1) + " ";
+    }
+}
+
 function cargarProductoCarritoDOM( {id, nombre, precio} ) {
     let cantidadProducto = carrito.productos.getCantidad(id);
+
+    if(carritoDomIsEmpty) cargarModalCarritoEnDOM();
 
     let tableBody = document.querySelector("#modalCarritoTableBody");
 
@@ -181,15 +215,18 @@ function cargarProductoCarritoDOM( {id, nombre, precio} ) {
 }
 
 function modificarCantidadProductoCarritoDOM( {id} ) {
-    let tdCantidad = document.querySelector("#carrito_tr_" + id).children[2];
+    let trProducto = document.querySelector("#carrito_tr_" + id);
+    let tdCantidad = trProducto.children[2];
     let prevCant = tdCantidad.innerHTML;
     tdCantidad.innerHTML = carrito.productos.getCantidad(id);
 
     let totalModalCarrito = document.querySelector("#totalModalCarrito");
     totalModalCarrito.innerHTML = '$' + (carrito.total);
 
-    console.log(document.querySelector("#carrito_tr_" + id));
-
+    if(carrito.productos.getCantidad(id) == 0){
+        trProducto.parentNode.removeChild(trProducto);
+        if(carrito.productos.map.size == 0) carritoDomIsEmpty = true;
+    }
 }
 
 function isProductoInCarritoDOM( {id} ) {
@@ -198,6 +235,7 @@ function isProductoInCarritoDOM( {id} ) {
 
 //crear modal carrito en el dom
 function cargarModalCarritoEnDOM() {
+    carritoDomIsEmpty = false;
     let modalCarrito = document.querySelector("#modalCarrito");
     modalCarrito.innerHTML = 
     `
@@ -224,7 +262,30 @@ function cargarModalCarritoEnDOM() {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Confirmar Compra</button>
+                    <button type="button" class="btn btn-primary" onclick="confirmarCompraAlert()">Confirmar Compra</button>
+                </div>
+            </div>
+        </div>
+    `
+}
+
+//crear modal carrito sin elementos en el dom
+function cargarModalVacioCarritoEnDOM() {
+    let modalCarrito = document.querySelector("#modalCarrito");
+    carritoDomIsEmpty = true;
+    modalCarrito.innerHTML = 
+    `
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCarritoLabel">Carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4>¡Usted no tiene elementos en el carrito!</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -232,6 +293,7 @@ function cargarModalCarritoEnDOM() {
 }
 
 function removerItemCarritoDom(nombre) {
+    console.log(nombre)
     let idProducto = crearIdProducto(nombre);
 
     //buscar el carrito en ls y eliminarlo
@@ -240,6 +302,53 @@ function removerItemCarritoDom(nombre) {
     //buscar el producto en el carrito y eliminarlo
     carrito.eliminarProductoUnidad(nombre);
 
-    //restar 1 la cantidad o eliminar el tr
+    //actualizar la cantidad o eliminar el tr
     modificarCantidadProductoCarritoDOM({ id: idProducto });
+
+    restarCantCarritoSpan();
+}
+
+function procesarTicket() {
+    let ticket = new Ticket();
+
+    for (const mapEntry of carrito.productos) {
+        //console.log(productMapItem);
+        ticket.agregarProductMapItem(mapEntry[1]);
+    }
+
+    for (const productMapItem of ticket.productos) {
+        for (let i = 0; i < productMapItem.cantidad; i++) {
+            //console.log(productMapItem);
+            removerItemCarritoDom(productMapItem.producto.nombre);
+        }
+    }
+
+    var modalCarritoElement = document.getElementById('modalCarrito');
+    var modal = bootstrap.Modal.getInstance(modalCarritoElement)
+    modal.hide();
+
+    swal({
+        title: "Muchas Gracias! Su compra ha sido confirmada!",
+        text: `Total a Pagar: $${ticket.total}`,
+        icon: "success",
+        buttons: true,
+        dangerMode: true,
+    })
+}
+
+function confirmarCompraAlert() {
+    swal({
+        title: "Confirmar Compra?",
+        text: "Presione ok para confirmar su compra",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((confirmaCompra) => {
+        if (confirmaCompra) {
+            procesarTicket();
+        } else {
+            swal("No hemos confirmado su compra!");
+        }
+    });
 }

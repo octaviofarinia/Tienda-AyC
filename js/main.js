@@ -11,10 +11,14 @@ function include(file) {
 
 if(window.location.href.endsWith('index.html')){
     include('js/wow.min.js');
+    include('js/sweetalert.min.js');
+    include('js/ticket.js');
     include('js/carrito.js');
     include('js/producto.js');
 }else {
     include('../js/wow.min.js');
+    include('../js/sweetalert.min.js');
+    include('../js/ticket.js');
     include('../js/carrito.js');
     include('../js/producto.js');
 }
